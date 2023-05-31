@@ -1,12 +1,7 @@
 import React, { useEffect, useState} from "react";
 import { useMutation, useApolloClient, gql } from '@apollo/client';
 import UserForm from "../components/UserForm";
-
-const SINGNUP_USER = gql`
-    mutation signUp($email: String!, $username: String!, $password: String!) {
-        signUp(email: $email, username: $username, password: $password)
-    }
-`;
+import { SINGNUP_USER } from "../gql/mutation";
 
 const SingUp = props => {
     const [values, setValues] = useState();

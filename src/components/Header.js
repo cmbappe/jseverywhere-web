@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../img/logo.svg';
 import ButtonAsLink from './ButtonAsLink';
+import { IS_LOGGED_IN } from '../gql/query';
 
 const HeaderBar = styled.header` width: 100%;
 padding: 0.5em 1em;
@@ -24,11 +25,6 @@ const UserState = styled.div`
 margin-left: auto;
 `;
 
-const IS_LOGGED_IN = gql`
-{
-    isLoggedIn @client
-}
-`;
 const Header = () => { 
     const { data, client } = useQuery(IS_LOGGED_IN);
     return (
